@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "vara-interface"
+version = "1.0.0"
+description = "Vara wrapper over https://github.com/polkascan/py-substrate-interface created to facilitate programming with Gear"
+authors = ["Vadim Smirnov <ukint-vs@proton.me>"]
+license = "Apache-2.0"
+
+homepage = "https://github.com/gear-tech/vara-interface"
+repository = "https://github.com/gear-tech/vara-interface"
+
+readme = "README.md"
+
+keywords = [
+    "python3",
+    "wrapper",
+    "blockchain",
+    "substrate",
+    "gear",
+    "vara",
+    "pypi-package"
+]
+classifiers = [
+    "Operating System :: Unix",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3",
+]
+
+packages = [
+    { include = "varainterface" },
+]
+
+include = [
+    "LICENSE",
+    ]
+exclude = [
+    ".gitignore",
+    ]
+
+[tool.poetry.scripts]
+robonomics_interface = 'robonomicsinterface.robonomics_interface_io:cli'
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/gear-tech/vara-interface/issues"
+
+[tool.poetry.dependencies]
+python = ">=3.8, <4.0"
+substrate-interface = ">=1.4.0, <2.0"
+click = "^8.0.4"
+
+[tool.poetry.dev-dependencies]
+Sphinx = "^4.4.0"
+black = "^22.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
