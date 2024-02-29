@@ -23,6 +23,7 @@ class SubEvent(Enum):
     UserMessageRead = "UserMessageRead"
     MessagesDispatched = "MessagesDispatched"
     MessageQueued = "MessageQueued"
+    ProgramChanged = "ProgramChanged"
     Transfer = "Transfer"
 
 

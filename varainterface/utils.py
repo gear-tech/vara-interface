@@ -96,3 +96,6 @@ def web_3_auth(seed: str) -> tp.Tuple[str, str]:
 
     keypair: Keypair = create_keypair(seed)
     return f"sub-{keypair.ss58_address}", f"0x{keypair.sign(keypair.ss58_address).hex()}"
+
+def generate_pid(code_id, salt):
+    return hashlib.blake2b(b"program_from_user" + bytes.fromhex(code_id) + str.encode(salt), digest_size=32)
